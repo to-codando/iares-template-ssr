@@ -21,7 +21,8 @@
     "start:dev": "node ./build.development.js && pnpm run lint",
     "start:prod": "cd ./dist && npx http-server",
     "api:mock": "json-server --watch api/db.json",
-    "test:watcher": "run-when-changed --watch './dist/**/*.js' --exec 'mocha  ./dist/tests/**/*.spec.js %s'"
+    "test:watcher": "run-when-changed --watch './dist/**/*.js' --exec 'mocha  ./dist/tests/**/*.spec.js %s'",
+    "serve": "bun --hot run ./src/server.ts"
   },
   "aliases": {
     "@/store": ["./dist/store/index.ts"],
@@ -43,6 +44,7 @@
     "@types/node": "^18.15.0",
     "@types/sinon": "^10.0.13",
     "@types/whatwg-fetch": "^0.0.33",
+    "bun-types": "^1.0.13",
     "c8": "^7.13.0",
     "chai": "^4.3.7",
     "cross-env": "^7.0.3",
@@ -64,7 +66,13 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@elysiajs/html": "^0.7.3",
+    "@elysiajs/static": "^0.7.1",
+    "@stricjs/app": "^1.0.0-alpha",
+    "@stricjs/router": "^5.0.6",
+    "@stricjs/utils": "^1.6.1",
+    "elysia": "^0.7.29",
     "htm": "^3.1.1",
-    "iares": "1.1.3"
+    "iares": "^1.1.7"
   }
 }

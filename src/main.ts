@@ -1,18 +1,18 @@
 import { createApp, html, render, router } from "iares";
-import { environment } from "env";
-
-import { routes } from "./routes";
-import { AppMain } from "@/components/AppMain";
+import PageLayout from './Layouts/Page';
+import { AppHome } from "@/components/AppHome";
 
 export const appHost = createApp({
-	onMount(context, props) {
-		render(html`<${AppMain} />`);
-		router({ routes, context }).init();
-	},
+  onMount(context, props) {
+    PageLayout(AppHome, { title: 'Outro' })
+  },
 });
 
-if (environment === "development") {
-	new EventSource("esbuild").addEventListener("change", () => {
-		window.location.reload();
-	});
-}
+// if (environment === "development") {
+//   new EventSource("esbuild").addEventListener("change", () => {
+//     window.location.reload();
+//   });
+// }
+
+
+ 

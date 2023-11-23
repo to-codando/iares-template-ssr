@@ -1,12 +1,11 @@
 import { html, css } from "iares";
+import { AppHello } from "@/components/AppHello";
 
 const template = ({ props }) => html`
-  <div class="wrap-ctx">
-    <h1>Hello Word, ${props?.title}!</h1>
-  </div>
+  <${AppHello} title="${props.title}" />
 `;
 
-export const AppHello = ({ props }) => {
+export const AppHome = ({ props }) => {
   return {
     template,
     styles,
@@ -20,6 +19,5 @@ const styles = () => css`
     display: flex;
     justify-content: center;
     align-items: center;
-    color:blue;
   }
 `;

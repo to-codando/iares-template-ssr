@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["bun-types"],
     "baseUrl": "./src",
      "lib": [ "ES2021", "DOM" ],
     "paths": {
