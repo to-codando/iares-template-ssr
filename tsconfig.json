@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+     "lib": [ "ES2021", "DOM" ],
+    "paths": {
+      "@/store": ["store/index.ts"],
+      "@/components/*": ["components/*"],
+      "@/utils/*": ["utils/*"],
+      "@/services/*": ["services/*"],
+      "@/assets/*": ["assets/*"],
+      "@/tests/*": ["tests/*"],
+      "@/mock/*": ["mock/*"],
+    },
+    "strict":true,
+    "esModuleInterop": false,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "target": "es2018",
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "inlineSources": true,
+  }
+  
+}

@@ -1,0 +1,70 @@
+{
+  "name": "app-travels",
+  "version": "1.0.0",
+  "author": "",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "clear": "shx rm -rf ./dist ./coverage",
+    "clear:coverage": "shx rm -rf ./coverage",
+    "clear:dist": "shx rm -rf ./dist",
+    "lint": "rome format ./src --write && rome check ./src --verbose",
+    "build": "cross-env NODE_ENV=production && pnpm clear && node ./build.production.js && pnpm run start:prod",
+    "dev": "cross-env NODE_ENV=development && pnpm start:dev",
+    "test": "pnpm run clear:dist && node ./build.spec.coverage.js && mocha ./dist/**/*.spec.js",
+    "test:watch": "pnpm run test && pnpm run test:watcher",
+    "test:coverage": "pnpm run coverage:build && c8 --reporter=text --reporter=lcov  mocha  ./dist/tests/**",
+    "coverage:build": "pnpm clear:coverage && node ./build.spec.coverage.js",
+    "start:dev": "node ./build.development.js && pnpm run lint",
+    "start:prod": "cd ./dist && npx http-server",
+    "api:mock": "json-server --watch api/db.json",
+    "test:watcher": "run-when-changed --watch './dist/**/*.js' --exec 'mocha  ./dist/tests/**/*.spec.js %s'"
+  },
+  "aliases": {
+    "@/store": ["./dist/store/index.ts"],
+    "@/components/*": ["./dist/components"],
+    "@/utils/*": ["./dist/utils"],
+    "@/services/*": ["./dist/services"],
+    "@/assets/*": ["./dist/assets"],
+    "@/mock/*": ["./dist/mock"]
+  },
+  "nyc": {
+    "extension": [".ts"]
+  },
+  "devDependencies": {
+    "@esm-bundle/chai": "4.3.4-fix.0",
+    "@microsoft/fetch-event-source": "^2.0.1",
+    "@types/chai": "^4.3.4",
+    "@types/jsdom": "^21.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.15.0",
+    "@types/sinon": "^10.0.13",
+    "@types/whatwg-fetch": "^0.0.33",
+    "c8": "^7.13.0",
+    "chai": "^4.3.7",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.17.11",
+    "esbuild-copy-files-plugin": "^1.1.0",
+    "esbuild-plugin-path-alias": "^1.0.7",
+    "glob": "^9.2.1",
+    "global-jsdom": "^8.7.0",
+    "http-server": "^14.1.1",
+    "install-peerdeps": "^3.0.3",
+    "jsdom": "^21.1.1",
+    "json-server": "^0.17.1",
+    "mocha": "^10.2.0",
+    "module-alias": "^2.2.2",
+    "rome": "^11.0.0",
+    "run-when-changed": "^2.1.0",
+    "shx": "^0.3.4",
+    "sinon": "^15.0.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "htm": "^3.1.1",
+    "iares": "1.1.3"
+  }
+}

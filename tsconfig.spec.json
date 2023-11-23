@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "lib": [ "ESNext", "DOM" ],
+    "paths": {
+      "@/store": ["store/index.ts"],
+      "@/components/*": ["components/*"],
+      "@/utils/*": ["utils/*"],
+      "@/services/*": ["services/*"],
+      "@/assets/*": ["assets/*"],
+      "@/tests/*": ["tests/*"],
+      "@/mock/*": ["mock/*"],
+    },
+    "typeRoots": ["./node_modules/@types"],
+    "types": [
+      "node",
+      "mocha",
+      "chai"
+    ],
+    "strict":true,
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "target": "esnext",
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "inlineSources": true,
+  }
+  
+}
