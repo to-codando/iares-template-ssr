@@ -5,6 +5,7 @@ import { glob } from "glob";
 import { context } from "esbuild";
 import copy from "esbuild-copy-files-plugin";
 import aliasPlugin from "esbuild-plugin-path-alias";
+import { classModules } from "esbuild-plugin-class-modules";
 import { buildEnvironment } from "./build.environment.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -39,11 +40,12 @@ const runBuild = async () => {
         target: "./dist",
         copyWithFolder: false, // will copy "images" folder with all files inside
       }),
-      copy({
-        source: ["./src/assets"],
-        target: "./dist",
-        copyWithFolder: true, // will copy "images" folder with all files inside
-      }),
+      // copy({
+      //   source: ["./src/assets"],
+      //   target: "./dist",
+      //   copyWithFolder: true, // will copy "images" folder with all files inside
+      // }),
+      classModules()
     ],
     supported: {
       "dynamic-import": true,

@@ -50,6 +50,7 @@
     "cross-env": "^7.0.3",
     "esbuild": "^0.17.11",
     "esbuild-copy-files-plugin": "^1.1.0",
+    "esbuild-plugin-class-modules": "^2.1.9",
     "esbuild-plugin-path-alias": "^1.0.7",
     "glob": "^9.2.1",
     "global-jsdom": "^8.7.0",
@@ -72,6 +73,7 @@
     "@stricjs/router": "^5.0.6",
     "@stricjs/utils": "^1.6.1",
     "elysia": "^0.7.29",
+    "fam-code-ui": "^0.0.3",
     "htm": "^3.1.1",
     "iares": "^1.1.7"
   }
