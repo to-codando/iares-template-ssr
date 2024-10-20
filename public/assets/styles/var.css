@@ -1,0 +1,49 @@
+:root {
+  --black-light: #505A59;
+  --black-power: #212C2E;
+  --black-soft: #263538;
+  --green-bluish-light: #DCF4F8;
+  --green-bright: #5DDABC;
+  --green-moss: #818B88;
+  --green-smooth: #76ADAD;
+  --green-soft: #CBF3E9;
+  --green-soft-light: #DBF4EE;
+  --green-super-light: #CCDBD7;
+  --light-grey: #EEF4F3;
+  --red-soft: #EC7B7B;
+  --white: #FFFFFF;
+
+  --title-color: #000;
+  --title-font-size-primary: 3.6em;
+  --title-font-weight-primary: 600;
+
+  --title-font-size-secondary: 2.2em;
+  --title-font-weight-secondary: 600;
+  --title-line-height-secondary: 3em;
+
+  --title-font-size-tertiary: 1.5em;
+  --title-font-weight-tertiary: bold;
+
+  --fam-buttom-primary-hole-border-color: #8196ae;
+  --fam-buttom-primary-hole-background: transparent;
+  --fam-buttom-primary-hole-color: #000;
+
+  --fam-buttom-primary-border-color: #000;
+  --fam-buttom-primary-background: var(--fam-buttom-primary-border-color);
+  --fam-buttom-primary-color: #fff;
+
+  --fam-button-font-size: 1em;
+
+
+  --fam-buttom-secondary-border-color: #ff794c;
+  --fam-buttom-secondary-background: var(--fam-buttom-secondary-border-color);
+  --fam-buttom-secondary-color: #fff;
+
+
+
+  --fam-card-background: #fff;
+  --fam-card-color: #c6c6c8;
+
+  --fam-card-border-color: #e4e5e7;
+
+}

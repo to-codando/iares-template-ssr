@@ -1,0 +1,55 @@
+// build.config.ts
+
+import { copyFilesPlugin } from './plugins/copy';
+import { filesOptimizer } from './plugins/filesOptimizer';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import postcssNested from 'postcss-nested';
+import cssLoader from 'bun-css-loader';
+
+const build = async () => {
+  // Configurações e variáveis aqui...
+  const ENVIRONMENT = process.env.ENVIRONMENT;
+  const PROTOCOL = process.env.PROTOCOL;
+  const HOST = process.env.HOST;
+  const PORT = process.env.PORT;
+
+  const isProductionMode = ENVIRONMENT === 'production';
+
+  try {
+    const result = await Bun.build({
+      entrypoints: ['src/main.ts'],
+      outdir: './dist',
+      sourcemap: isProductionMode ? 'none' : 'linked',
+      target: 'browser',
+      packages: 'bundle',
+      experimentalCss: true,
+      minify: {
+        whitespace: isProductionMode,
+        identifiers: false,
+        syntax: isProductionMode,
+      },
+      splitting: isProductionMode,
+      loader: {
+        '.css': 'text',
+      },
+      plugins: [
+        filesOptimizer({
+          files: [
+            {
+              entries: [],
+              output: '',
+              loaders: [],
+            },
+          ],
+        }),
+      ],
+    });
+
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+build();
